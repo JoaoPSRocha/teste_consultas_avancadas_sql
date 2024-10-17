@@ -1,5 +1,5 @@
 USE restaurante;
-/*SEGUNDO PASSO DA ATIVIDADE
+/*SEGUNDO PASSO DA ATIVIDADE*/
 CREATE VIEW resumo_pedido AS
 SELECT p.id_pedido, p.quantidade, p.data_pedido,
 c.nome AS nome_cliente, c.email AS email_cliente,
@@ -9,11 +9,11 @@ FROM pedidos p
 INNER JOIN cliente c ON p.id_cliente = c.id_cliente
 INNER JOIN funcionarios f ON  p.id_funcionario = f.id_funcionario
 INNER JOIN produtos prod ON prod.id_produto = p.id_cliente
-*/
-/*TERCEIRA PASSO DA ATIVIDADE
+
+/*TERCEIRA PASSO DA ATIVIDADE*/
 SELECT id_pedido,nome_cliente, (preco_produto*quantidade) AS total_gasto FROM resumo_pedido
-*/
-/* QUARTO PASSO DA ATIVIDADE
+
+/* QUARTO PASSO DA ATIVIDADE*/
 CREATE OR REPLACE VIEW resumo_pedido AS
 SELECT p.id_pedido, p.quantidade, p.data_pedido,
 c.nome AS nome_cliente, c.email AS email_cliente,
@@ -24,15 +24,15 @@ FROM pedidos p
 INNER JOIN cliente c ON p.id_cliente = c.id_cliente
 INNER JOIN funcionarios f ON  p.id_funcionario = f.id_funcionario
 INNER JOIN produtos prod ON prod.id_produto = p.id_cliente
-*/
-/*QUINTO PASSO DA ATIVIDADE
+
+/*QUINTO PASSO DA ATIVIDADE*/
 SELECT id_pedido,nome_cliente, total_gasto FROM resumo_pedido
-*/
-/* SEXTO PASSO DA ATIVIDADE 
+
+/* SEXTO PASSO DA ATIVIDADE */
 EXPLAIN
 SELECT id_pedido,nome_cliente, total_gasto FROM resumo_pedido
-*/
-/* SETIMO PASSO DA ATIVIDADE
+
+/* SETIMO PASSO DA ATIVIDADE */
 DELIMITER //
 
 CREATE FUNCTION BuscaIngredientesProduto (produto_id INT)
@@ -47,11 +47,11 @@ BEGIN
     RETURN ingredientes_produto_selecionado;
 END //
 DELIMITER ; 
-*/
-/* OITVO PASSO DA ATIVIDADE
+
+/* OITVO PASSO DA ATIVIDADE*/
 SELECT BuscaIngredientesProduto(10)
-*/
-/* NONO PASSO DA ATIVIDADE
+
+/* NONO PASSO DA ATIVIDADE*/
 
 DELIMITER //
 CREATE FUNCTION mediapedido (pedido_id INT)
@@ -81,5 +81,5 @@ END //
 DEMILITER ;*/
 /*DECIMO PASSO DA ATIVIDADE
 SELECT  mediapedido(10)
-*/
+
 
